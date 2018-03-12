@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bobby Taylor Portfolio</title>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="css.css">
+
+
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
+
+  <style>
+      body {
+          font-family: 'Alegreya';
+          font-size: 19px;
+      }
+  </style>
+ 
+
+  
+</head>
+<body>
+        <nav class="navbar navbar-inverse ">
+                <div class="container">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="index.html">Home Page</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="project.html">Projects</a>
+                        </li>
+                        <li>
+                            <a href="Resume-Bobby Taylor.pdf" title="download file" target="_blank">Resume</a>
+                        </li>
+                        <li>
+                            <li>
+                                <a href="mailto:bltxr9@gmail.com">Contact</a>
+                            </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            
+    <div class="container-fluid">
+
+        <h3>Acknowledgements & Inspiration</h3>
+        <p>This research was supported/partially supported by [Name of Foundation, Grant maker, Donor. 
+            We thank our colleagues from [Name of the supporting institution] who provided insight and 
+            expertise that greatly assisted the research, although they may not agree with all of the 
+            interpretations/conclusions of this paper. This research was supported/partially supported by 
+            [Name of Foundation, Grant maker, Donor]. We thank our colleagues from [Name of the supporting institution] 
+            who provided insight and expertise that greatly assisted the research, although they may not agree with all
+             of the interpretations/conclusions of this paper. This research was supported/partially supported by 
+             [Name of Foundation, Grant maker, Donor]. We thank our colleagues from [Name of the supporting institution] 
+             who provided insight and expertise that greatly assisted the research, although they may not agree with all 
+             of the interpretations/conclusions of this paper.</p>
+
+
+             <h3>ACKNOWLEDGEMENTS</h3>
+
+             <p>This work would not have been possible without the financial support of the Vanderbilt Physician Scientist Development Award, the American Roentgen Ray Society Scholarship or the Vanderbilt University Medical Center Department of Radiology and Radiological Sciences. I am especially indebted to Dr. Martin Sandler, Chairman of the Department of Radiology, and Dr. John Worrell, Chief of the Section of Thoracic Radiology, who have been supportive of my career goals and who worked actively to provide me with the protected academic time to pursue those goals.
+                    I am grateful to all of those with whom I have had the pleasure to work during this and other related projects. Each of the members of my Dissertation Committee has provided me extensive personal and professional guidance and taught me a great deal about both scientific research and life in general. I would especially like to thank Dr. Ron Price, the chairman of my committee. As my teacher and mentor, he has taught me more than I could ever give him credit for here. He has shown me, by his example, what a good scientist (and person) should be.
+                    Nobody has been more important to me in the pursuit of this project than the members of my family. I would like to thank my parents, whose love and guidance are with me in whatever I pursue. They are the ultimate role models. Most importantly, I wish to thank my loving and supportive wife, Jennifer, and my three wonderful children, Lauren, Jacob and Elizabeth, who provide unending inspiration.</p>
+
+
+
+                    <p>I would like to express my sincere gratitude to my supervisors Dr. Sankalpa Ghosh & Dr. Manish Sharma
+                         for providing their invaluable guidance, comments and suggestions throughout the course of the project.
+                          I would specially thank Dr. Sankalpa Ghosh for constantly motivating me to work harder and Dr. Manish Sharma 
+                          for getting me the HOPG samples.Also I would like to thank Mr. S. Vidyananda for his assistance in the HRTEM
+                           imaging, Mr. Sandeep Sharma for his help during the preparation of the sample, Mr. Mandeep Singh for providing
+                            me an overview of the TEM image processing software Digital Micrograph.</p>
+
+
+    <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+</div>
+
+
+
+
+
+
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv', function (err, data) {
+  // Create a lookup table to sort and regroup the columns of data,
+  // first by year, then by continent:
+  var lookup = {};
+  function getData(year, continent) {
+    var byYear, trace;
+    if (!(byYear = lookup[year])) {;
+      byYear = lookup[year] = {};
+    }
+     // If a container for this year + continent doesn't exist yet,
+     // then create one:
+    if (!(trace = byYear[continent])) {
+      trace = byYear[continent] = {
+        x: [],
+        y: [],
+        id: [],
+        text: [],
+        marker: {size: []}
+      };
+    }
+    return trace;
+  }
+
+  // Go through each row, get the right trace, and append the data:
+  for (var i = 0; i < data.length; i++) {
+    var datum = data[i];
+    var trace = getData(datum.year, datum.continent);
+    trace.text.push(datum.country);
+    trace.id.push(datum.country);
+    trace.x.push(datum.lifeExp);
+    trace.y.push(datum.gdpPercap);
+    trace.marker.size.push(datum.pop);
+  }
+
+  // Get the group names:
+  var years = Object.keys(lookup);
+  // In this case, every year includes every continent, so we
+  // can just infer the continents from the *first* year:
+  var firstYear = lookup[years[0]];
+  var continents = Object.keys(firstYear);
+
+  // Create the main traces, one for each continent:
+  var traces = [];
+  for (i = 0; i < continents.length; i++) {
+    var data = firstYear[continents[i]];
+     // One small note. We're creating a single trace here, to which
+     // the frames will pass data for the different years. It's
+     // subtle, but to avoid data reference problems, we'll slice 
+     // the arrays to ensure we never write any new data into our
+     // lookup table:
+    traces.push({
+      name: continents[i],
+      x: data.x.slice(),
+      y: data.y.slice(),
+      id: data.id.slice(),
+      text: data.text.slice(),
+      mode: 'markers',
+      marker: {
+        size: data.marker.size.slice(),
+        sizemode: 'area',
+        sizeref: 200000
+      }
+    });
+  }
+
+  // Create a frame for each year. Frames are effectively just
+  // traces, except they don't need to contain the *full* trace
+  // definition (for example, appearance). The frames just need
+  // the parts the traces that change (here, the data).
+  var frames = [];
+  for (i = 0; i < years.length; i++) {
+    frames.push({
+      name: years[i],
+      data: continents.map(function (continent) {
+        return getData(years[i], continent);
+      })
+    })
+  }
+    
+  // Now create slider steps, one for each frame. The slider
+  // executes a plotly.js API command (here, Plotly.animate).
+  // In this example, we'll animate to one of the named frames
+  // created in the above loop.
+  var sliderSteps = [];
+  for (i = 0; i < years.length; i++) {
+    sliderSteps.push({
+      method: 'animate',
+      label: years[i],
+      args: [[years[i]], {
+        mode: 'immediate',
+        transition: {duration: 300},
+        frame: {duration: 300, redraw: false},
+      }]
+    });
+  }
+  
+  var layout = {
+    title:'Adding Names to Line and Scatter Plot',
+    xaxis: {
+      title: 'Life Expectancy',
+      range: [30, 85]
+    },
+    yaxis: {
+      title: 'GDP per Capita',
+      type: 'log'
+    },
+    hovermode: 'closest',
+     // We'll use updatemenus (whose functionality includes menus as
+     // well as buttons) to create a play button and a pause button.
+     // The play button works by passing `null`, which indicates that
+     // Plotly should animate all frames. The pause button works by
+     // passing `[null]`, which indicates we'd like to interrupt any
+     // currently running animations with a new list of frames. Here
+     // The new list of frames is empty, so it halts the animation.
+    updatemenus: [{
+      x: 0,
+      y: 0,
+      yanchor: 'top',
+      xanchor: 'left',
+      showactive: false,
+      direction: 'left',
+      type: 'buttons',
+      pad: {t: 87, r: 10},
+      buttons: [{
+        method: 'animate',
+        args: [null, {
+          mode: 'immediate',
+          fromcurrent: true,
+          transition: {duration: 300},
+          frame: {duration: 500, redraw: false}
+        }],
+        label: 'Play'
+      }, {
+        method: 'animate',
+        args: [[null], {
+          mode: 'immediate',
+          transition: {duration: 0},
+          frame: {duration: 0, redraw: false}
+        }],
+        label: 'Pause'
+      }]
+    }],
+     // Finally, add the slider and use `pad` to position it
+     // nicely next to the buttons.
+    sliders: [{
+      pad: {l: 130, t: 55},
+      currentvalue: {
+        visible: true,
+        prefix: 'Year:',
+        xanchor: 'right',
+        font: {size: 20, color: '#666'}
+      },
+      steps: sliderSteps
+    }]
+  };
+  
+  // Create the plot:
+  Plotly.plot('myDiv', {
+    data: traces,
+    layout: layout,
+    frames: frames,
+  });
+});
+    
+    </script>
+
+
+</body>
+</html>
