@@ -23,7 +23,7 @@ img {
     background-image: url("https://images3.alphacoders.com/853/thumb-1920-85305.jpg");
 
     /* Full height */
-    height: 150%; 
+    height: 130%; 
 
     /* Center and scale the image nicely */
     background-position: center;
@@ -36,7 +36,6 @@ img {
 
 #intro-text { color: whitesmoke;
               font-size: 45px;
-            padding-bottom: 300px;
               padding-left: 20px;
              font-style: italic;
             line-height: 50px}

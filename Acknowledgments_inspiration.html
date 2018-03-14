@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bobby Taylor Portfolio</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="css.css">
+
+
+  <link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Alegreya';
+      font-size: 19px;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse ">
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="index.html">Home Page</a>
+        </li>
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+
+        <li>
+          <a href="project.html">Projects</a>
+        </li>
+        <li>
+          <a href="Bobby Taylor-Resume.pdf" title="download file" target="_blank">Resume</a>
+        </li>
+        <li>
+          <li>
+            <a href="mailto:bltxr9@gmail.com">Contact</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h3> Acknowledgments:</h3>
+    I would like to express my sincere gratitude to my previous supervisor
+    <a href="https://www.linkedin.com/in/lee-eitel-a072a57/"
+      target="_blank">Lee Eitel</a> and mentor
+    <a href="https://www.linkedin.com/in/kenneth-tipton-9b942218/" target="_blank">Ken Tipton</a> for providing their invaluable guidance, comments, and suggestions throughout my time at Callaway Nuclear
+    Power Plant. I would like to also thank
+    <a href="https://www.linkedin.com/in/aaron-h-84b42485/" target="_blank">Arron Hinton</a>,
+    <a href="https://www.linkedin.com/in/aseladassanayake/" target="_blank">Asela Dassanayake</a>,
+    <a href="https://www.linkedin.com/in/khajal-cooper-06b6856b/" target="_blank">Khajal Cooper</a>,
+    <a href="https://www.linkedin.com/in/kalielong/" target="_blank">Kalie Long</a>,
+    <a href="https://www.linkedin.com/in/tammy-clardy-1b540416/" target="_blank">Tammy Clardy</a>,
+    <a href="https://www.linkedin.com/in/vincent-blake-840a7025/" target="_blank">Vincent Blake</a>, and
+    <a href="https://www.linkedin.com/in/grover-allen-p-e-2214833/" target="_blank">Grover Allen</a> for always pushing me forward when times were difficult motivating me to follow my real passion. Also,
+    I am grateful to all of those with whom I have had the pleasure to work with and meet during my time at the University
+    of Austin. But, most of all, I would like to thank my grandfather, Curley Hines for teaching me never to give up and
+    always do what is right as I explained in this medium article titled,
+    <a href="https://medium.com/@bltxr9/exploratory-data-analysis-on-i-have-a-dream-speech-9e21b8e8fc78"
+      target="_blank">"Small Exploratory Data Analysis In The World of Big Data: I HAVE A DREAM SPEECH. "</a> And Finally, I am indebted to
+    Dan Moore and his family, plus my neighbors in Kirkwood, Missouri for bringing food to my grandfather during the harsh
+    winter months while I was studying at the University of Austin. </p>
+
+    <h3>Inspiration:</h3>
+    <p>
+      During my time exploring and mapping different datasets, I came across the work of Hans Rosling, a Swedish physician which
+      was truly inspirational. He is responsible for creating a commonly used chart called the Gapminder. Below is an interactive
+      multi-variant representation of the famous Gapminder chart which is now widely used. In this dataset, you can see how
+      as time increases the life expectancy and Real GDP per Capita also increases.</p>
+
+    <div id="myDiv">
+      <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
+    <p style="text-align:right;">
+      <cite></cite> Plotly.Js Example</p>
+
+    <div style="height:15px;"></div>
+  </div>
+  <script>
+    Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv', function (err,
+      data) {
+      // Create a lookup table to sort and regroup the columns of data,
+      // first by year, then by continent:
+      var lookup = {};
+
+      function getData(year, continent) {
+        var byYear, trace;
+        if (!(byYear = lookup[year])) {;
+          byYear = lookup[year] = {};
+        }
+        // If a container for this year + continent doesn't exist yet,
+        // then create one:
+        if (!(trace = byYear[continent])) {
+          trace = byYear[continent] = {
+            x: [],
+            y: [],
+            id: [],
+            text: [],
+            marker: {
+              size: []
+            }
+          };
+        }
+        return trace;
+      }
+
+      // Go through each row, get the right trace, and append the data:
+      for (var i = 0; i < data.length; i++) {
+        var datum = data[i];
+        var trace = getData(datum.year, datum.continent);
+        trace.text.push(datum.country);
+        trace.id.push(datum.country);
+        trace.x.push(datum.lifeExp);
+        trace.y.push(datum.gdpPercap);
+        trace.marker.size.push(datum.pop);
+      }
+
+      // Get the group names:
+      var years = Object.keys(lookup);
+      // In this case, every year includes every continent, so we
+      // can just infer the continents from the *first* year:
+      var firstYear = lookup[years[0]];
+      var continents = Object.keys(firstYear);
+
+      // Create the main traces, one for each continent:
+      var traces = [];
+      for (i = 0; i < continents.length; i++) {
+        var data = firstYear[continents[i]];
+        // One small note. We're creating a single trace here, to which
+        // the frames will pass data for the different years. It's
+        // subtle, but to avoid data reference problems, we'll slice 
+        // the arrays to ensure we never write any new data into our
+        // lookup table:
+        traces.push({
+          name: continents[i],
+          x: data.x.slice(),
+          y: data.y.slice(),
+          id: data.id.slice(),
+          text: data.text.slice(),
+          mode: 'markers',
+          marker: {
+            size: data.marker.size.slice(),
+            sizemode: 'area',
+            sizeref: 200000
+          }
+        });
+      }
+
+      // Create a frame for each year. Frames are effectively just
+      // traces, except they don't need to contain the *full* trace
+      // definition (for example, appearance). The frames just need
+      // the parts the traces that change (here, the data).
+      var frames = [];
+      for (i = 0; i < years.length; i++) {
+        frames.push({
+          name: years[i],
+          data: continents.map(function (continent) {
+            return getData(years[i], continent);
+          })
+        })
+      }
+
+      // Now create slider steps, one for each frame. The slider
+      // executes a plotly.js API command (here, Plotly.animate).
+      // In this example, we'll animate to one of the named frames
+      // created in the above loop.
+      var sliderSteps = [];
+      for (i = 0; i < years.length; i++) {
+        sliderSteps.push({
+          method: 'animate',
+          label: years[i],
+          args: [
+            [years[i]], {
+              mode: 'immediate',
+              transition: {
+                duration: 300
+              },
+              frame: {
+                duration: 300,
+                redraw: false
+              },
+            }
+          ]
+        });
+      }
+
+      var layout = {
+
+        xaxis: {
+          title: 'Life Expectancy',
+          range: [30, 85]
+        },
+        yaxis: {
+          title: 'GDP per Capita',
+          type: 'log'
+        },
+        hovermode: 'closest',
+        // We'll use updatemenus (whose functionality includes menus as
+        // well as buttons) to create a play button and a pause button.
+        // The play button works by passing `null`, which indicates that
+        // Plotly should animate all frames. The pause button works by
+        // passing `[null]`, which indicates we'd like to interrupt any
+        // currently running animations with a new list of frames. Here
+        // The new list of frames is empty, so it halts the animation.
+        updatemenus: [{
+          x: 0,
+          y: 0,
+          yanchor: 'top',
+          xanchor: 'left',
+          showactive: false,
+          direction: 'left',
+          type: 'buttons',
+          pad: {
+            t: 87,
+            r: 10
+          },
+          buttons: [{
+            method: 'animate',
+            args: [null, {
+              mode: 'immediate',
+              fromcurrent: true,
+              transition: {
+                duration: 300
+              },
+              frame: {
+                duration: 500,
+                redraw: false
+              }
+            }],
+            label: 'Play'
+          }, {
+            method: 'animate',
+            args: [
+              [null], {
+                mode: 'immediate',
+                transition: {
+                  duration: 0
+                },
+                frame: {
+                  duration: 0,
+                  redraw: false
+                }
+              }
+            ],
+            label: 'Pause'
+          }]
+        }],
+        // Finally, add the slider and use `pad` to position it
+        // nicely next to the buttons.
+        sliders: [{
+          pad: {
+            l: 130,
+            t: 55
+          },
+          currentvalue: {
+            visible: true,
+            prefix: 'Year:',
+            xanchor: 'right',
+            font: {
+              size: 20,
+              color: '#666'
+            }
+          },
+          steps: sliderSteps
+        }]
+      };
+
+      // Create the plot:
+      Plotly.plot('myDiv', {
+        data: traces,
+        layout: layout,
+        frames: frames,
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
