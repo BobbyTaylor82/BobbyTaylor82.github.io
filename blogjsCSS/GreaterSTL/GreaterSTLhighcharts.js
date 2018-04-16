@@ -1,4 +1,5 @@
 
+// open STL 
 Highcharts.chart('containerPopulation', {
     chart: {
       type: 'column',
