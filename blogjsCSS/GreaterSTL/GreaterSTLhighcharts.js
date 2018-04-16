@@ -10,7 +10,7 @@ Highcharts.chart('containerPopulation', {
       }
     },
     title: {
-      text: 'Top 10 Populated  Areas in Greater St.louis'
+      text: 'Top 10 Populated  Areas in Greater St.Louis'
     },
     subtitle: {
       text: ''
@@ -183,7 +183,7 @@ Highcharts.chart('containerPopulation', {
       }
     },
     title: {
-      text: 'Sales Tax Per Capita For Top 10 Populated Areas in Greater St.louis'
+      text: 'Sales Tax Per Capita For Top 10 Populated Areas in Greater St.Louis'
     },
     subtitle: {
       text: ''
