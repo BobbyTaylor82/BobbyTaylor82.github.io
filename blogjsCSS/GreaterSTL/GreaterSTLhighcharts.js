@@ -157,7 +157,7 @@ Highcharts.chart('containerPopulation', {
       }
     },
     series: [{
-      name: 'Fines and Fees Per Capita',
+      name: 'Fines & Fees Per Capita',
       data: [86.70542134,
         43.85714162,
         50.92387312,
