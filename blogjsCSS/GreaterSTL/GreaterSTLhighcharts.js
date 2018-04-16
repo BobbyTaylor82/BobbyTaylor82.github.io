@@ -123,7 +123,7 @@ Highcharts.chart('containerPopulation', {
       }
     },
     title: {
-      text: 'Fines and Fees Per Capita For Top 10 Populated Areas in Greater St.Louis'
+      text: 'Fines & Fees Per Capita For Top 10 Populated Areas in Greater St.Louis'
     },
     subtitle: {
       text: ''
