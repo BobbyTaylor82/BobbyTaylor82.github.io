@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Small Exploratory Data Analysis In The World of Big Data Blog</title>
+  <!-- Custom styles for this template -->
+
+  <link href="blog.css" rel="stylesheet">
+  
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- st.louis highcharts css -->
+  <link rel="stylesheet" href="blogjsCSS/GreaterSTL/GreaterSTLhighcharts.css">
+
+  <style>
+    body {
+      font-family: 'Alegreya';
+      font-size: 19px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-inverse ">
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="index.html">Home Page</a>
+        </li>
+        <li>
+          <a href="about.html">About</a>
+        </li>
+        <li>
+          <a href="Acknowledgments_inspiration.html">Acknowledgments</a>
+        </li>
+        <li>
+          <a href="project.html">Projects</a>
+        </li>
+        <li>
+          <a href="Bobby Taylor-Resume.pdf" title="download file" target="_blank">Resume</a>
+        </li>
+        <li>
+          <a href="mailto:bltxr9@gmail.com">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 blog-main">
+
+
+        <div class="blog-header">
+          <h2 class="blog-title">Small Exploratory Data Analysis In The World of Big Data </h2>
+
+          <p class="lead blog-description">
+            <img src="blogIMG/logo.png" alt="" srcset=""> The Official Exploratory Data Analysis blog</p>
+        </div>
+        <hr>
+
+        <!-- Greater St.Louis Area -->
+        <div class="blog-post">
+          <a href="http://">
+            <h2 class="blog-post-title">Greater St.Louis Area</h2>
+          </a>
+          <p class="blog-post-meta">
+            <span class="glyphicon glyphicon-time"></span> Posted 4/19/2018 by
+            <a href="https://www.linkedin.com/in/bobby-taylor-b2b028103/" target="_blank">Bobby Taylor</a>
+          </p>
+          <img src="blogIMG/stlPHOTO.jpeg" width=100% height="480px" alt="Photo of St.louis"
+            srcset="">
+          <figcaption style="text-align: center; color: gray;">Panoramic view of St.Louis</figcaption>
+          <br>
+          <p>As I travel from the home of Willie Nelson back to the birthplace of Chuck Berry, I started reflecting on the things
+            I have experienced and the people I encountered. I can tell you leaving St. Louis was a hard decision but necessary.
+            For me, I needed to experience other cities.
+          </p>
+
+          <p> Now, I am back in St.louis wondering what should be my next move. So, I decided to explore a dataset I found on
+            the open STL GitHub page. In this quick EDA, I used Highcharts for mapping, JavaScript, HTML, CSS, and pandas.
+            In this dataset, the records were pretty straightforward. Each record included both discrete and continuous numerical
+            features and two categorical features for each municipality. The features are the following: </p>
+          <br>
+          <div class="row">
+            <div class="col-md-5">
+              <p>
+                <u> Feature Names</u>
+              </p>
+              <ul>
+                <li> Municipality </li>
+                <li> Population </li>
+                <li>Sales Tax </li>
+                <li>Fines and Fees </li>
+                <li>FF Per Capita </li>
+                <li>ST per Capita </li>
+                <li>General Revenue </li>
+                <li>FF as Percent of General Revenue </li>
+                <li>Without Sales Tax </li>
+                <li>With Fines and Fees under Cap </li>
+                <li>Best Course </li>
+              </ul>
+            </div>
+            <div class="col-md-7">
+              <img src="blogIMG/arch.jpeg" width=100% height="300px" alt="Photo of St.louis"
+                srcset="">
+              <figcaption style="text-align: center; color: gray;"> st.louis arch photo</figcaption>
+            </div>
+          </div>
+          <br>
+          <p>So first, I decided to map the top 10 populated areas in St.Louis and I wanted to know the revenue for each municipality.
+            I was amazed that Florissant had the highest population and University City generated the most revenue.
+          </p>
+          <br>
+          <div id="containerPopulation" style="height: 400px"></div>
+          <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption>
+          <br>
+          <br>
+          <div id="containerRevenue" style="height: 400px"></div>
+          <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption>
+          <br>
+          <p> Next, I decided to group by municipality to visualize the sale tax and fines and fees per capita, and the results
+            were startling. It appears Ferguson has the highest sale tax and fines and fees per capita but generates the
+            lowest revenue and has the smallest population. </p>
+          <br>
+          <div id="containerFF" style="height: 400px"></div>
+          <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption>
+          <br>
+          <br>
+          <div id="containerST" style="height: 400px"></div>
+          <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption>
+          <br>
+          <h3>Findings:</h3>
+          <p>The goal of this EDA was to practice interactive mapping with a real dataset and learn more about front-end developement.
+            In the process, I discovered a few findings which pose even deeper questions which are outside of my domain.
+            Some of the questions are the following:</p>
+          <ul>
+            <li> Why does Ferguson and Maryland Heights have the highest fine and fees per capita and how can St.louis solve this
+              problem?
+            </li>
+            <li>The population size is inversely proportional to the general revenue in Wildwood. Maybe, there needs to be more
+              businesses in this municipality.</li>
+            <li>What are some of the contributing factors in sales tax per capita and how can thess values be lowered for all
+              municipalities?</li>
+            <li>How can the general revenue be increased in Wildwood and Ferguson?</li>
+          </ul>
+        </div>
+        <!-- /End Greater St.Louis Area -->
+
+        <hr>
+
+        <!-- WHY...WHY...WHY...Create a blog??? -->
+        <div class="blog-post">
+          <h2 class="blog-post-title">WHY...WHY..Create a blog???</h2>
+          <p class="blog-post-meta">
+            <span class="glyphicon glyphicon-time"></span> Posted 4/18/2018 by
+            <a href="https://www.linkedin.com/in/bobby-taylor-b2b028103/" target="_blank">Bobby Taylor</a>
+          </p>
+          <p>The goal of this blog is to visually explore different datasets and provide a summary of my findings. I chose to
+            create this blog for a couple of different reasons.
+          </p>
+          <ul>
+            <li> If the old saying, "practice makes perfect" is true, then this will be an excellent medium to practice EDA. Often,
+              I find myself only wanting to know a few different questions when exploring various datasets with nowhere to
+              post my findings. So, I figured creating this blog would be a great place to showcase my results and learn
+              a lot along the way.</li>
+            <li>A good way to practice front-end web development, web applications, and use different interactive mapping libraries.</li>
+          </ul>
+          <p>This blog is pretty standard at this time, but as my skills grow, I will further design the front-end.</p>
+
+
+        </div>
+        <!-- /End WHY...WHY...WHY...Create a blog??? -->
+      </div>
+      <!-- /.blog-main -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <nav>
+    <ul class="pager">
+      <li>
+        <a href="#">Previous</a>
+      </li>
+      <li>
+        <a href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.container -->
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+  </script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <!-- d3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- Greater St.Louis highcharts post -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+  <!--Greater St.Louis highcharts js -->
+  <script src="blogjsCSS/GreaterSTL/GreaterSTLhighcharts.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
