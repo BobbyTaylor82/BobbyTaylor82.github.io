@@ -37,6 +37,23 @@
       font-size: 20px;
     }
   </style>
+
+<style>
+
+  .myImg {
+
+background-image: url("http://www.nationsonline.org/gallery/USA/St.-Louis-skyline.jpg");
+
+
+}
+
+
+#containerStackPlot {
+  opacity: .9;
+}
+
+
+</style>
 </head>
 
 
@@ -95,8 +112,12 @@
             St. Louis was a hard decision but necessary. For me, I needed to experience other cities.
           </p>
 
+          <div class="myImgSTL">
+            <div id="containerStackPlot"></div>
+        </div> <br>
+
           <p> Now, I am back in St.louis wondering what should be my next move. So, I decided to explore a dataset
-            I found rambling through the interwebs. In this quick EDA, I used Highcharts for mapping, JavaScript, 
+            I found rambling through the interwebs. In this quick EDA, I used an interactive mapping library, JavaScript, 
             HTML, CSS, and pandas.The records in this dataset were pretty straightforward and no data cleaning was needed.
             Each record contained eleven features. The features were the following: </p>
           <br>
@@ -131,22 +152,22 @@
           </p>
           <br>
           <div id="containerPopulation" style="height: 400px"></div>
-          <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption>
+          <!-- <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption> -->
           <br>
           <br>
           <div id="containerRevenue" style="height: 400px"></div>
-          <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption>
+          <!-- <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption> -->
           <br>
           <p> Next, I decided to group by municipality to visualize the sale tax and fines & fees per capita and the results
             were startling. It appears Ferguson has the highest sale tax along with fines & fees per capita but generates the
             lowest revenue and has the smallest population. </p>
           <br>
           <div id="containerFF" style="height: 400px"></div>
-          <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption>
+          <!-- <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption> -->
           <br>
           <br>
           <div id="containerST" style="height: 400px"></div>
-          <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption>
+          <!-- <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption> -->
           <br>
           <h3>Findings:</h3>
           <p>The goal of this EDA was to practice interactive mapping with a real dataset and learn more about front-end developement.
@@ -196,9 +217,9 @@
   </div>
   <nav>
     <ul class="pager">
-      <li>
+      <!-- <li>
         <a href="#">Previous</a>
-      </li>
+      </li> -->
       <li>
         <a href="#">Next</a>
       </li>
@@ -229,6 +250,7 @@
 
   <!--Greater St.Louis highcharts js -->
   <script src="blogjsCSS/GreaterSTL/GreaterSTLhighcharts.js"></script>
+
 
 
 
