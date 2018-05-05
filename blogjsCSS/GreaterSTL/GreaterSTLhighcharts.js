@@ -264,10 +264,10 @@ Highcharts.chart('containerStackPlot', {
     type: 'bar'
   },
   title: {
-    text: 'Total St.Louis Population by City & County'
+    text: 'Avgerage St.Louis Population by City & County'
   },
   xAxis: {
-    categories: ['% Total Population']
+    categories: ['Average Population']
   },
   yAxis: {
     min: 0,
