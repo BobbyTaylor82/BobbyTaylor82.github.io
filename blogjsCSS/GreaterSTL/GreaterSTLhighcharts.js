@@ -264,7 +264,7 @@ Highcharts.chart('containerStackPlot', {
     type: 'bar'
   },
   title: {
-    text: 'Avgerage St.Louis Population by City & County'
+    text: 'Average St.Louis Population by City & County'
   },
   xAxis: {
     categories: ['Average Population']
