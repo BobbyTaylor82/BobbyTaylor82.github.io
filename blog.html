@@ -138,6 +138,39 @@
                     <p class="lead blog-description">
                         <img src="blogIMG/logo.png" alt="" srcset=""> The Official Exploratory Data Analysis Blog</p>
                 </div>
+
+                <hr>
+
+                <!-- Data Viz: Missouri's Past Unemployment Rates -->
+                <div class="blog-post">
+                    <h2 class="blog-post-title">Data Viz: Missouri's Past Unemployment Rates</h2>
+                    <p class="blog-post-meta">
+                        <span class="glyphicon glyphicon-time"></span> Posted 9/25/2019 by
+                        <a href="https://www.linkedin.com/in/bobby-taylor-b2b028103/" target="_blank">Bobby Taylor</a>
+                    </p>
+
+
+                    <iframe title="A Snapshot from the Past of Missouri's Unemployment Rate"
+                        aria-label="Interactive line chart" id="datawrapper-chart-rd7F7"
+                        src="https://datawrapper.dwcdn.net/rd7F7/6/" scrolling="no" frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;" height="600"></iframe>
+                    <script type="text/javascript">
+                        ! function () {
+                            "use strict";
+                            window.addEventListener("message", function (a) {
+                                if (void 0 !== a.data["datawrapper-height"])
+                                    for (var e in a.data["datawrapper-height"]) {
+                                        var t = document.getElementById("datawrapper-chart-" + e) || document
+                                            .querySelector("iframe[src*='" + e + "']");
+                                        t && (t.style.height = a.data["datawrapper-height"][e] + "px")
+                                    }
+                            })
+                        }();
+                    </script>
+
+                </div>
+                <!-- /End Data Viz: Missouri's Past Unemployment Rates -->
+
                 <hr>
 
                 <!-- Homicide & Suicide -->
@@ -167,25 +200,36 @@
                     <figcaption style="text-align: center; color: gray;">Victims of Gun Related Deaths</figcaption>
                     <br>
 
-                    <p>Homicide and Suicide these two words are often associated with the feeling of grief. Did you know 1 out
-                        of every 200 gun owners uses their own gun to end their life? Although there are many ways homicides
-                        and suicides are committed, for this post, I will focus on gun-related deaths. Now, Let's talk about
-                        murder. If anyone has had a family member who was a victim of a gun-related homicide, they will understand
+                    <p>Homicide and Suicide these two words are often associated with the feeling of grief. Did you know
+                        1 out
+                        of every 200 gun owners uses their own gun to end their life? Although there are many ways
+                        homicides
+                        and suicides are committed, for this post, I will focus on gun-related deaths. Now, Let's talk
+                        about
+                        murder. If anyone has had a family member who was a victim of a gun-related homicide, they will
+                        understand
                         the mixed emotions of sorrow or guilt which follow.</p>
 
-                    <p>I will tell you a short story. Once upon a time, I had a cousin. A real fly guy type of character. I
-                        remember one time, he wore a button-down zebra printed Versace shirt with some snakeskin boots. Years
-                        later, I saw him at a family reunion. We talked for about an hour. After the small talk, we planned
-                        a night out on the following Saturday. But, this shindig never happened. I later found out he had
+                    <p>I will tell you a short story. Once upon a time, I had a cousin. A real fly guy type of
+                        character. I
+                        remember one time, he wore a button-down zebra printed Versace shirt with some snakeskin boots.
+                        Years
+                        later, I saw him at a family reunion. We talked for about an hour. After the small talk, we
+                        planned
+                        a night out on the following Saturday. But, this shindig never happened. I later found out he
+                        had
                         been shot and killed on Natural Bridge Road. </p>
 
 
-                    <p>Let's fast forward to the next family reunion the following year, I remember seeing his girlfriend and
+                    <p>Let's fast forward to the next family reunion the following year, I remember seeing his
+                        girlfriend and
                         seeing the innocents in his 4-year-old child eyes. I often wondered if the child understood what
-                        happened to his father. I am pretty sure the memory of my cousin impelled me to explore this dataset.
+                        happened to his father. I am pretty sure the memory of my cousin impelled me to explore this
+                        dataset.
                         Let's start exploring.</p>
 
-                    <p>For this EDA, I decided to explore a dataset which included four types of gun-related deaths. The four
+                    <p>For this EDA, I decided to explore a dataset which included four types of gun-related deaths. The
+                        four
                         categorical variables in the intent column are the following:</p>
 
 
@@ -199,9 +243,12 @@
 
                     <br>
 
-                    <p>This EDA will mainly focus on gun-related homicides and suicides. The dataset included 99,414 records
-                        and 11 features which unfortunately for me needed scrubbing before the analysis could be completed.
-                        After the data was cleaned, I wanted to know a few different questions. The feature names are below.</p>
+                    <p>This EDA will mainly focus on gun-related homicides and suicides. The dataset included 99,414
+                        records
+                        and 11 features which unfortunately for me needed scrubbing before the analysis could be
+                        completed.
+                        After the data was cleaned, I wanted to know a few different questions. The feature names are
+                        below.</p>
                     <br>
 
                     <div class="row">
@@ -226,8 +273,10 @@
                         <div class="col-md-7">
 
 
-                            <img src="naturalBridgeRoadCrime.png" width=100% height="300px" alt="Photo of Crime Scene of Natural Bridge" srcset="">
-                            <figcaption style="text-align: center; color: gray;">Crime Scene on Natural Bridge Road</figcaption>
+                            <img src="naturalBridgeRoadCrime.png" width=100% height="300px"
+                                alt="Photo of Crime Scene of Natural Bridge" srcset="">
+                            <figcaption style="text-align: center; color: gray;">Crime Scene on Natural Bridge Road
+                            </figcaption>
 
 
                         </div>
@@ -240,13 +289,15 @@
                     <ol>
                         <li>What are the percentage values for each ethnic group involved in a gun-related death?</li>
                         <li>What is the percentage of gun-related deaths by intent?</li>
-                        <li>What is the central tendency for each ethnic group age distribution for victims involved in either
+                        <li>What is the central tendency for each ethnic group age distribution for victims involved in
+                            either
                             a homicide or suicide? </li>
                     </ol>
                     <br>
 
 
-                    <h3>Question 1: What are the percentage values for each ethnic group involved in a gun-related death?</h3>
+                    <h3>Question 1: What are the percentage values for each ethnic group involved in a gun-related
+                        death?</h3>
                     <br>
 
                     <div id="myImg">
@@ -264,7 +315,8 @@
                     <br>
 
 
-                    <h3>Question 3: What is the central tendency for each ethnic group age distribution for victims involved
+                    <h3>Question 3: What is the central tendency for each ethnic group age distribution for victims
+                        involved
                         in either a homicide or suicide?</h3>
                     <br>
 
@@ -276,8 +328,10 @@
                             <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
                                 <u> Homicide Distributions</u>
                             </h3>
-                            <p>Use the drop-down menu below to search the age distribution and central tendency for each ethnic
-                                group who were victims of a gun-related homicide. Also, click on the interactive map histogram
+                            <p>Use the drop-down menu below to search the age distribution and central tendency for each
+                                ethnic
+                                group who were victims of a gun-related homicide. Also, click on the interactive map
+                                histogram
                                 and data values to explore the results.</p>
                             <br>
 
@@ -352,8 +406,10 @@
                             <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
                                 <u> Suicide Distributions </u>
                             </h3>
-                            <p>Use the drop-down menu below to search the age distribution and central tendency for each ethnic
-                                group who committed a gun-related suicide. Also, click on the interactive map histogram and
+                            <p>Use the drop-down menu below to search the age distribution and central tendency for each
+                                ethnic
+                                group who committed a gun-related suicide. Also, click on the interactive map histogram
+                                and
                                 data values to explore the results.</p>
                             <br>
 
@@ -419,32 +475,47 @@
 
 
                     <h3>Findings:</h3>
-                    <p>Overall, I enjoyed performing this EDA. I think the reason I enjoy wrangling through data is to uncover
-                        hidden truths. Although the data collected is a sample of the overall United States population, I
-                        believe it paints a good picture of America's issues pertaining to gun-related deaths. Lets, look
+                    <p>Overall, I enjoyed performing this EDA. I think the reason I enjoy wrangling through data is to
+                        uncover
+                        hidden truths. Although the data collected is a sample of the overall United States population,
+                        I
+                        believe it paints a good picture of America's issues pertaining to gun-related deaths. Lets,
+                        look
                         at some of the findings:</p>
                     <ul>
-                        <li>The data analyzed contained 99,414 gun-related deaths, 63.5% are suicides, and 34% are homicides.
-                            Why are some many people committing suicides? Is there a way to lower these percentages? I remember
-                            when I was younger, there was a D.A.R.E program in schools. I am not sure if this program still
-                            exists, but maybe it would be a good idea to start a suicide prevention program for kids. Just
+                        <li>The data analyzed contained 99,414 gun-related deaths, 63.5% are suicides, and 34% are
+                            homicides.
+                            Why are some many people committing suicides? Is there a way to lower these percentages? I
+                            remember
+                            when I was younger, there was a D.A.R.E program in schools. I am not sure if this program
+                            still
+                            exists, but maybe it would be a good idea to start a suicide prevention program for kids.
+                            Just
                             a thought.
                         </li>
                         <br>
-                        <li>87.6% of the suicides in this dataset were committed by Caucasian's. Also, something alarming is
-                            the mean, median, and mode are 52, 53, and 54 years old for suicides committed by Caucasian's.
-                            When comparing the median to other ethnic groups, there is at least a 10-year difference. What
+                        <li>87.6% of the suicides in this dataset were committed by Caucasian's. Also, something
+                            alarming is
+                            the mean, median, and mode are 52, 53, and 54 years old for suicides committed by
+                            Caucasian's.
+                            When comparing the median to other ethnic groups, there is at least a 10-year difference.
+                            What
                             is happening at 50 years old, that is causing these suicides. Is this the adverse effects of
                             ageism? I'm not sure what the solution is to this problem, but its something to question.
                         </li>
                         <br>
 
 
-                        <li>Now, let's look at the homicide distributions for each ethnic group. African-Americans make up 56.7%
-                            of all the homicides, following Caucasian's making up 25%. But, what stood out to me the most
-                            was all the age distributions for homicides for each ethnic group are positively skewed. This
-                            leads me to believe that younger people, in general, are more susceptible to die from gun-related
-                            homicides. Why is this? Is age directly proportional to wisdom? If so, then it would be critical
+                        <li>Now, let's look at the homicide distributions for each ethnic group. African-Americans make
+                            up 56.7%
+                            of all the homicides, following Caucasian's making up 25%. But, what stood out to me the
+                            most
+                            was all the age distributions for homicides for each ethnic group are positively skewed.
+                            This
+                            leads me to believe that younger people, in general, are more susceptible to die from
+                            gun-related
+                            homicides. Why is this? Is age directly proportional to wisdom? If so, then it would be
+                            critical
                             to listen to your elders. Warning, I have met some old fools.
                         </li>
 
@@ -465,7 +536,8 @@
                     <img src="blogIMG/stlPHOTO.jpeg" width=100% height="480px" alt="Photo of St.louis" srcset="">
                     <figcaption style="text-align: center; color: gray;">Panoramic view of St.Louis</figcaption>
                     <br>
-                    <p>As I traveled from the home of Willie Nelson back to the birthplace of Chuck Berry, I started reflecting
+                    <p>As I traveled from the home of Willie Nelson back to the birthplace of Chuck Berry, I started
+                        reflecting
                         on the things I've experienced and the people I've encountered. I can tell you leaving St. Louis
                         was a hard decision but necessary. For me, I needed to experience other cities.
                     </p>
@@ -475,10 +547,13 @@
                     </div>
                     <br>
 
-                    <p> Now, I am back in St.louis wondering what should be my next move. So, I decided to explore a dataset
-                        I found rambling through the interwebs. In this quick EDA, I used an interactive mapping library,
+                    <p> Now, I am back in St.louis wondering what should be my next move. So, I decided to explore a
+                        dataset
+                        I found rambling through the interwebs. In this quick EDA, I used an interactive mapping
+                        library,
                         JavaScript, HTML, CSS, and pandas.The records in this dataset were pretty straightforward and no
-                        data cleaning was needed. Each record contained eleven features. The features were the following:
+                        data cleaning was needed. Each record contained eleven features. The features were the
+                        following:
                     </p>
                     <br>
                     <div class="row">
@@ -506,8 +581,10 @@
                         </div>
                     </div>
                     <br>
-                    <p>So first, I decided to map the top 10 populated areas in St.Louis and I wanted to know the revenue for
-                        each municipality. I was amazed that Florissant had the highest population and University City generated
+                    <p>So first, I decided to map the top 10 populated areas in St.Louis and I wanted to know the
+                        revenue for
+                        each municipality. I was amazed that Florissant had the highest population and University City
+                        generated
                         the most revenue.
                     </p>
                     <br>
@@ -518,7 +595,8 @@
                     <div id="containerRevenue" style="height: 400px"></div>
                     <!-- <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption> -->
                     <br>
-                    <p> Next, I decided to group by municipality to visualize the sale tax and fines & fees per capita and the
+                    <p> Next, I decided to group by municipality to visualize the sale tax and fines & fees per capita
+                        and the
                         results were startling. It appears Ferguson has the highest sale tax along with fines & fees per
                         capita but generates the lowest revenue and has the smallest population. </p>
                     <br>
@@ -530,16 +608,20 @@
                     <!-- <figcaption style="text-align: center; color: gray;">3D Bar Plot generated using Highcharts JS</figcaption> -->
                     <br>
                     <h3>Findings:</h3>
-                    <p>The goal of this EDA was to practice interactive mapping with a real dataset and learn more about front-end
+                    <p>The goal of this EDA was to practice interactive mapping with a real dataset and learn more about
+                        front-end
                         developement. In the process, I discovered a few findings which pose even deeper questions which
                         are outside of my domain. Some of the questions are the following:</p>
                     <ul>
-                        <li> Why does Ferguson and Maryland Heights have the highest fine & fees per capita and how can St.louis
+                        <li> Why does Ferguson and Maryland Heights have the highest fine & fees per capita and how can
+                            St.louis
                             solve this problem?
                         </li>
-                        <li>The population size is inversely proportional to the general revenue in Wildwood. Maybe, there needs
+                        <li>The population size is inversely proportional to the general revenue in Wildwood. Maybe,
+                            there needs
                             to be more businesses in this municipality.</li>
-                        <li>What are some of the contributing factors in sales tax per capita and how can these values be lowered
+                        <li>What are some of the contributing factors in sales tax per capita and how can these values
+                            be lowered
                             for all municipalities?
                         </li>
                         <li>How can the general revenue be increased in Wildwood and Ferguson?</li>
@@ -556,18 +638,23 @@
                         <span class="glyphicon glyphicon-time"></span> Posted 4/18/2018 by
                         <a href="https://www.linkedin.com/in/bobby-taylor-b2b028103/" target="_blank">Bobby Taylor</a>
                     </p>
-                    <p>The goal of this blog is to visually explore different datasets and provide a summary of my findings.
+                    <p>The goal of this blog is to visually explore different datasets and provide a summary of my
+                        findings.
                         I chose to create this blog for a couple of different reasons.
                     </p>
                     <ul>
-                        <li> If the old saying, "practice makes perfect" is true, then this will be an excellent medium to practice
-                            EDA. Often, I find myself only wanting to know a few different questions when exploring various
+                        <li> If the old saying, "practice makes perfect" is true, then this will be an excellent medium
+                            to practice
+                            EDA. Often, I find myself only wanting to know a few different questions when exploring
+                            various
                             datasets with nowhere to post my findings. So, I figured creating this blog would be a great
                             place to showcase my results and learn a lot along the way.</li>
-                        <li>A good way to practice front-end web development, web applications, and use different interactive
+                        <li>A good way to practice front-end web development, web applications, and use different
+                            interactive
                             mapping libraries.</li>
                     </ul>
-                    <p>This blog is pretty standard at this time, but as my skills grow, I will further design the front-end.</p>
+                    <p>This blog is pretty standard at this time, but as my skills grow, I will further design the
+                        front-end.</p>
 
 
                 </div>
