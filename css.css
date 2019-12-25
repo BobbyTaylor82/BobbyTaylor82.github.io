@@ -20,10 +20,10 @@ img {
   } 
 .bg {
     /* The image used */
-    background-image: url("homePhoto.jpeg");
+    background-image: url("https://static.hwpi.harvard.edu/files/styles/os_files_xxlarge/public/statistics-2/files/pexels-photo-546819_copy.jpeg?m=1521749667&itok=x7sB7n9P");
 
     /* Full height */
-    height: 140%; 
+    height: 110%; 
 
     /* Center and scale the image nicely */
     background-position: center;
